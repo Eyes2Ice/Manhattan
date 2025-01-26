@@ -1,0 +1,242 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+:root {
+    --general-text: #ffffff;
+    --accent-text: #210E09;
+    --accent-color: #D5621D;
+    --accent-bg: #d5621d1a;
+
+    --transition: all .5s;
+    --border-radius: 5px;
+}
+
+body {
+    font-family: 'Stolzl', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #210E09;
+    color: var(--general-text);
+}
+
+.body--opened-menu {
+    overflow: hidden;
+}
+
+.body--opened-modal {
+    overflow: hidden;
+    padding-right: 17px;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.main__hero {
+    margin: 40px auto 120px;
+}
+
+.main__kitchen,
+.main__rider,
+.main__gallery,
+.main__events {
+    margin: 0 auto 120px;
+}
+
+.main__contact {
+    margin: 0 auto 100px;
+}
+
+.title {
+    font-family: "Gotham Pro";
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1310px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: #000000d4;
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.body--opened-modal .modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__window {
+    display: flex;
+
+    flex-direction: column;
+    max-width: 450px;
+    background: url('../img/gallery/gallery-14.jpg') 50% 50% / cover no-repeat;
+    border-radius: 15px;
+    padding: 10px 40px 40px;
+    position: relative;
+    color: var(--general-text);
+    border: 1.5px solid #d5621d57;
+}
+
+.modal__img {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.modal__img img {
+    width: 100%;
+    max-width: 120px;
+    aspect-ratio: 1/1;
+}
+
+.modal__cansel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-radius: var(--border-radius);
+    aspect-ratio: 1/1;
+    align-self: end;
+    transition: var(--transition);
+}
+
+.modal__cansel svg path {
+    fill: var(--accent-color)
+}
+
+.modal__cansel:hover {
+    background: var(--general-text);
+}
+
+.modal__title {
+    font-family: "Gotham Pro";
+    font-size: 21px;
+    letter-spacing: 0.9px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal__text {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.field {
+    position: relative;
+    display: block;
+}
+
+.field span {
+    position: absolute;
+    top: 12px;
+    left: 28px;
+    font-size: 11px;
+    color: var(--input-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition)
+}
+
+.field:hover span {
+    color: var(--accent-color);
+}
+
+.field__input {
+    padding: 19px 28px;
+    border-radius: 100px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    font-size: 16px;
+    color: var(--general-text);
+    width: 100%;
+    transition: var(--transition);
+}
+
+.field__input::placeholder {
+    color: var(--input-color);
+}
+
+.field__input,
+.field__input::placeholder {
+    transition: var(--transition);
+}
+
+.field__input:hover {
+    background: var(--general-text);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.field__input:hover::placeholder {
+    color: var(--accent-color);
+}
+
+.field__input:focus {
+    padding: 26px 28px 12px 28px;
+    background: var(--general-text);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.field__input:focus+span {
+    opacity: 1;
+    visibility: visible;
+    color: var(--accent-color);
+}
+
+.modal__button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--accent-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--general-text);
+    border-radius: var(--border-radius);
+    border: 3px solid var(--accent-color);
+}
